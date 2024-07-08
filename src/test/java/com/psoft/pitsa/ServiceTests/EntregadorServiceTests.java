@@ -8,7 +8,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class EntregadorCRUDTests {
+public class EntregadorServiceTests {
 
     @Autowired
     private MockMvc mockMvc;
@@ -30,7 +30,7 @@ public class EntregadorCRUDTests {
 
     @Test
     @DisplayName("Teste para criar entregador com código incorreto.")
-    public void CriarEntregadorComCodigoIncorretoTest() throws Exception {
+    public void CriarEntregadorComCodigoIncorretoTest() {
         // Arrange:
         // Act:
         // Assert:
@@ -46,7 +46,7 @@ public class EntregadorCRUDTests {
 
     @Test
     @DisplayName("Teste para editar entregador com código incorreto.")
-    public void EditarEntregadorComCodigoIncorretoTest() throws Exception {
+    public void EditarEntregadorComCodigoIncorretoTest() {
         // Arrange:
         // Act:
         // Assert:
@@ -62,7 +62,7 @@ public class EntregadorCRUDTests {
 
     @Test
     @DisplayName("Teste para remover entregador com código incorreto.")
-    public void RemoverEntregadorComCodigoIncorretoTest() throws Exception {
+    public void RemoverEntregadorComCodigoIncorretoTest() {
         // Arrange:
         // Act:
         // Assert:
