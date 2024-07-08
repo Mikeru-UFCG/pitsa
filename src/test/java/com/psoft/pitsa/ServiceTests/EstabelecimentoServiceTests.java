@@ -1,4 +1,4 @@
-package com.psoft.pitsa.TestesFuncionais;
+package com.psoft.pitsa.ServiceTests;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -16,11 +16,8 @@ public class EstabelecimentoServiceTests {
     @Autowired
     private ObjectMapper objectMapper;
 
-    private Estabelecimento estabelecimento;
-
     @BeforeEach
     public void setUp() {
-        estabelecimento = new Estabelecimento("123456", "Loja 1");
 
     }
 

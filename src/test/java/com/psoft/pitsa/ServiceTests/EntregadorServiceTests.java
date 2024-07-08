@@ -1,4 +1,4 @@
-package com.psoft.pitsa.TestesFuncionais;
+package com.psoft.pitsa.ServiceTests;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
