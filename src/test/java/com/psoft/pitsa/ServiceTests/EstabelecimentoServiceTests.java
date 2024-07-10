@@ -4,17 +4,53 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import com.psoft.pitsa.dto.EstabelecimentoPostPutRequestDTO;
+import com.psoft.pitsa.model.Estabelecimento;
+import com.psoft.pitsa.repository.EstabelecimentoRepository;
+import com.psoft.pitsa.service.EstabelecimentoCriarService;
+import com.psoft.pitsa.service.EstabelecimentoEditarService;
+import com.psoft.pitsa.service.EstabelecimentoRemoverService;
 
 @SpringBootTest
 @DisplayName("Testes para service do CRUD de estabelecimentos.")
 public class EstabelecimentoServiceTests {
 
+    @Autowired
+    EstabelecimentoCriarService cdriver;
+
+    @Autowired
+    EstabelecimentoEditarService edriver;
+
+    @Autowired
+    EstabelecimentoRemoverService rdriver;
+
+    @Autowired
+    EstabelecimentoRepository estabelecimentoRepository;
+
+    Estabelecimento estabelecimento;
+
+    EstabelecimentoPostPutRequestDTO estabelecimentoPostPutRequestDTO;
+
     @BeforeEach
-    void setup() {}
+    void setup() {
+        estabelecimento = Estabelecimento.builder()
+                .nome("Giraffas")
+                .codigoAcesso("123456")
+                .build();
+        estabelecimentoPostPutRequestDTO = EstabelecimentoPostPutRequestDTO.builder()
+                .nome("Giraffas")
+                .codigoAcesso("123456")
+                .build();
+    }
 
     @AfterEach
-    void tearDown() {}
+    void tearDown() {
+        estabelecimentoRepository.deleteAll();
+    }
+
 
     @Test
     @DisplayName("Teste para criar estabelecimento com código correto.")

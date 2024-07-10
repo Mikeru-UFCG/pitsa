@@ -1,4 +1,4 @@
-package com.psoft.pitsa;
+package com.psoft.pitsa.com.psoft.pitsa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

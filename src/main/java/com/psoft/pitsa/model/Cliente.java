@@ -1,4 +1,4 @@
-package main.model;
+package com.psoft.pitsa.model;
 
 public class Cliente {
     
