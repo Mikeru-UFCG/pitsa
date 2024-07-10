@@ -1,29 +1,24 @@
 package com.psoft.pitsa.ServiceTests;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
+@SpringBootTest
+@DisplayName("Testes para service do CRUD de estabelecimentos.")
 public class EstabelecimentoServiceTests {
 
-    @Autowired
-    private MockMvc mockMvc;
-
-    @Autowired
-    private ObjectMapper objectMapper;
-
     @BeforeEach
-    public void setUp() {
+    void setup() {}
 
-    }
+    @AfterEach
+    void tearDown() {}
 
     @Test
     @DisplayName("Teste para criar estabelecimento com código correto.")
-    public void CriarEstabelecimentoComCodigoCorretoTest() {
+    public void CriarEstabelecimentoComCodigoCorretoTest() throws Exception {
         // Arrange:
         // Act:
         // Assert:
