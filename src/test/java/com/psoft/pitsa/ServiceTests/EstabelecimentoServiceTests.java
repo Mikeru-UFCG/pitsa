@@ -1,5 +1,8 @@
 package com.psoft.pitsa.ServiceTests;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -56,8 +59,15 @@ public class EstabelecimentoServiceTests {
     @DisplayName("Teste para criar estabelecimento com código correto.")
     public void CriarEstabelecimentoComCodigoCorretoTest() throws Exception {
         // Arrange:
+        estabelecimentoRepository.save(estabelecimento);
+
         // Act:
+        Estabelecimento result = cdriver.criarEstabelecimento(estabelecimentoPostPutRequestDTO);
+
         // Assert:
+        assertNotNull(result);
+        assertEquals(estabelecimentoPostPutRequestDTO.getNome(), result.getNome());
+        assertEquals(estabelecimentoPostPutRequestDTO.getCodigoAcesso(), result.getCodigoAcesso());
     }
 
     @Test
